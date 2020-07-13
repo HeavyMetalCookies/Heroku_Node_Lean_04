@@ -1,0 +1,3 @@
+
+    document.title=( "[DOCUMENT_TITLE]" );
+    window.alert("[WINDOW_ALERT]");
