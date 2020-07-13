@@ -208,26 +208,26 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
 //:CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC://
 
     const HN4_SQL_Run_C=function( rar_daw ){ "use strict"
-        rar=rar_daw[0];
-        daw=rar_daw[1];
+        var rar=rar_daw[0];
+        var daw=rar_daw[1];
         rar[1].end("[TODO:HN4_SQL_Run_C]");
 
     };;
     const HN4_SQL_Run_R=function( rar_daw ){ "use strict"
-        rar=rar_daw[0];
-        daw=rar_daw[1];
+        var rar=rar_daw[0];
+        var daw=rar_daw[1];
         rar[1].end("[TODO:HN4_SQL_Run_R]");
 
     };;
     const HN4_SQL_Run_U=function( rar_daw ){ "use strict"
-        rar=rar_daw[0];
-        daw=rar_daw[1];
+        var rar=rar_daw[0];
+        var daw=rar_daw[1];
         rar[1].end("[TODO:HN4_SQL_Run_U]");
 
     };;
     const HN4_SQL_Run_D=function( rar_daw ){ "use strict"
-        rar=rar_daw[0];
-        daw=rar_daw[1];
+        var rar=rar_daw[0];
+        var daw=rar_daw[1];
         rar[1].end("[TODO:HN4_SQL_Run_D]");
 
     };;
