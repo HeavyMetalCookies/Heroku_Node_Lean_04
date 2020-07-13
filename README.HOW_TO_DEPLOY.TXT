@@ -3,6 +3,15 @@ Deploy:
     1. Download heroku CLI and get a heroku account.
     2. [ heroku login ] on git bash terminal
     3. heroku apps:create "prj-name" 
+
+    4. ( Below shoud all be on one line )
+
+        heroku addons:create 
+        heroku-postgresql:hobby-dev 
+        --version=12 
+        --app      "prj-name" 
+        --name "dab-prj-name"
+
     4. git remote add heroku "https://git.heroku.com/prj-name.git"
     5. git remote -v   ## verify remote has been setup
     6. git push heroku master
