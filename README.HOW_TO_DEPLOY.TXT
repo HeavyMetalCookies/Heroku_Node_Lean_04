@@ -4,7 +4,7 @@ Deploy:
     2. [ heroku login ] on git bash terminal
     3. heroku apps:create "prj-name" 
 
-    4. ( Below shoud all be on one line )
+    4. ( Below should all be on one line )
 
         heroku addons:create 
         heroku-postgresql:hobby-dev 

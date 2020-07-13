@@ -1,7 +1,8 @@
-//:HN3: Heroku_Node(lean):03
+//:HN4: Heroku_Node(lean):04
 //:     HN1: Minimal example to serve Html + Javascript.
 //:     HN2: Serve File as text, promises, routing refactor.
 //:     HN3: SQL execution from file on server.
+//:     HN4: CRUD operations demonstration
 
 //:FUNCTION_INDEX:
 
@@ -24,6 +25,7 @@
 
     var     cli = null; //:pg.Client instance.
     var obj_cin = null; //:pg connection information object
+
 
 const HN2_Get_fas =function( src_pat ){
 
@@ -202,6 +204,36 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
     });;
 };;
 
+//:C:Crud:Crud_Operations_That_Can_Be_Invoked_From_Route:----://
+//:CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC://
+
+    const HN4_SQL_Run_C=function( rar_daw ){ "use strict"
+        rar=rar_daw[0];
+        daw=rar_daw[1];
+        rar[1].end("[TODO:HN4_SQL_Run_C]");
+
+    };;
+    const HN4_SQL_Run_R=function( rar_daw ){ "use strict"
+        rar=rar_daw[0];
+        daw=rar_daw[1];
+        rar[1].end("[TODO:HN4_SQL_Run_R]");
+
+    };;
+    const HN4_SQL_Run_U=function( rar_daw ){ "use strict"
+        rar=rar_daw[0];
+        daw=rar_daw[1];
+        rar[1].end("[TODO:HN4_SQL_Run_U]");
+
+    };;
+    const HN4_SQL_Run_D=function( rar_daw ){ "use strict"
+        rar=rar_daw[0];
+        daw=rar_daw[1];
+        rar[1].end("[TODO:HN4_SQL_Run_D]");
+
+    };;
+
+//:CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC://
+
 //://////////////////////////////////////////////////////////://
 //:                                                          ://
 //: main request routing function.                           ://
@@ -251,6 +283,19 @@ const HN2_Rou=function( req , res ){ "use strict"
     /* -- */    ,   "/H" : [ "./htm._"    , "text/html"       ]
     /* -- */    ,   "/J" : [ "./j_s._"    , "text/javascript" ]
     /* -- */    ,   "/T" : [ "./sql._"    , "SQL_GET_TEST"    ]
+
+                ,   "/C"      :[ "./sql/C._"  , "SQL_RUN_C"   ]
+                ,   "/CRUD_C" :[ "./sql/C._"  , "SQL_RUN_C"   ]
+                                                              
+                ,   "/R"      :[ "./sql/R._"  , "SQL_RUN_R"   ]
+                ,   "/CRUD_R" :[ "./sql/R._"  , "SQL_RUN_R"   ]
+                                                              
+                ,   "/U"      :[ "./sql/U._"  , "SQL_RUN_U"   ]
+                ,   "/CRUD_U" :[ "./sql/U._"  , "SQL_RUN_U"   ]
+                                                              
+                ,   "/D"      :[ "./sql/D._"  , "SQL_RUN_D"   ]
+                ,   "/CRUD_D" :[ "./sql/D._"  , "SQL_RUN_D"   ]
+                
     /* -- */    };;
     /* 02 */    daw=( tab_daw[ url ] || tab_daw[ "/K" ] );
     /* 03 */    tab_act={ 
@@ -258,6 +303,11 @@ const HN2_Rou=function( req , res ){ "use strict"
     /* -- */    ,   "text/html"       : HN1_Ser_Fil
     /* -- */    ,   "text/javascript" : HN1_Ser_Fil
     /* -- */    ,   "SQL_GET_TEST"    : HN2_SQL_Get_Tes
+    /* -- */
+    /* -- */    ,   "SQL_RUN_C"       : HN4_SQL_Run_C
+    /* -- */    ,   "SQL_RUN_R"       : HN4_SQL_Run_R
+    /* -- */    ,   "SQL_RUN_U"       : HN4_SQL_Run_U
+    /* -- */    ,   "SQL_RUN_D"       : HN4_SQL_Run_D
     /* -- */    };;
     /* 04 */    act = tab_act[ daw[ 1 ] ];
     /* 05 */    rar_daw=[rar,daw]; 
