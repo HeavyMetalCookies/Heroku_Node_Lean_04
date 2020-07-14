@@ -133,8 +133,8 @@ const HN3_Run_fas
 
         }).catch((obj_err)=>{
 
-            ror_boo=(  2  );
-            ror_dat=( err );
+            ror_boo=(    2    );
+            ror_dat=( obj_err );
             rar[1].write( "[HN3_E02]:"+err.toString );
 
         }).finally(()=>{
@@ -143,7 +143,7 @@ const HN3_Run_fas
                 njs_resolver( ror_dat ); //:[cof,q_r]
             }else
             if( 2 == ror_boo ){
-                njs_rejector( ror_dat ); //:(  err  )
+                njs_rejector( ror_dat ); //:(obj_err)
             }else{
                 //:This section should never execute.
                 //:Indicates a programmer logic error.
