@@ -244,9 +244,9 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
 
             var cof = cof_q_r[ 0 ];
             var q_r = cof_q_r[ 1 ];
-            var len = q_r.length;
+            var len = q_r.rows.length;
             for( var i = 0; i < len; i++ ){
-                rar[1].write( q_r[i].toString() );
+                rar[1].write( q_r.rows[i].toString() );
             };;
 
         }).catch((obj_err)=>{
