@@ -236,6 +236,12 @@ const HN4_Pri_rar_daw_cof_q_r=function(
     
     };;
 
+    rar[1].write( ""
+    +   "[cof](((" + "\n"
+    +     cof      + "\n"
+    +   ")))"      + "\n"
+    );;
+
 };;
 
 //:C:Crud:Crud_Operations_That_Can_Be_Invoked_From_Route:----://
