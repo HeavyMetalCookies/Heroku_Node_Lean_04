@@ -207,6 +207,37 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
     });;
 };;
 
+const HN4_Pri_rar_daw_cof_q_r=function(
+              rar_daw_cof_q_r
+){ "use strict"
+
+    //:Unpack Data:
+    //://////////////////////////////////////////////////////://
+    var rar_daw = rar_daw_cof_q_r[ 0 ];
+    var cof_q_r = rar_daw_cof_q_r[ 1 ];
+
+    var rar = rar_daw[ 0 ];
+    var daw = rar_daw[ 1 ];
+
+    var cof = cof_q_r[ 0 ];
+    var q_r = cof_q_r[ 1 ];
+    //://////////////////////////////////////////////////////://
+
+    var len = q_r.rows.length;
+    for( var i = 0; i < len; i++ ){
+    
+        for( const [key,val] of Object.entries( q_r.rows[i] ) ){
+    
+            rar[1].write(`${key}:${val}`);
+            rar[1].write("\n");
+    
+        };;
+        rar[1].write("\n\n");
+    
+    };;
+
+};;
+
 //:C:Crud:Crud_Operations_That_Can_Be_Invoked_From_Route:----://
 //:CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC://
 
@@ -233,8 +264,6 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
 
         });;
     };;
-    
-    //:RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR://
     const HN4_SQL_Run_R=function( 
         rar_daw 
     ){ "use strict"
@@ -246,20 +275,24 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
         HN3_Run_fas( rar, daw[0] /* src_pat */ )
         .then(( cof_q_r )=>{
 
-            var cof = cof_q_r[ 0 ];
-            var q_r = cof_q_r[ 1 ];
-            var len = q_r.rows.length;
-            for( var i = 0; i < len; i++ ){
+            HN4_Pri_rar_daw_cof_q_r(
+                   [rar_daw,cof_q_r]
+            );;
 
-                for( const [key,val] of Object.entries( q_r.rows[i] ) ){
-
-                    rar[1].write(`${key}:${val}`);
-                    rar[1].write("\n");
-
-                };;
-                rar[1].write("\n\n");
-
-            };;
+        //:    var cof = cof_q_r[ 0 ];
+        //:    var q_r = cof_q_r[ 1 ];
+        //:    var len = q_r.rows.length;
+        //:    for( var i = 0; i < len; i++ ){
+        //:
+        //:        for( const [key,val] of Object.entries( q_r.rows[i] ) ){
+        //:
+        //:            rar[1].write(`${key}:${val}`);
+        //:            rar[1].write("\n");
+        //:
+        //:        };;
+        //:        rar[1].write("\n\n");
+        //:
+        //:    };;
 
         }).catch((obj_err)=>{
 
@@ -273,8 +306,6 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
 
         });;
     };;
-    //:RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR://
-
     const HN4_SQL_Run_U=function( rar_daw ){ "use strict"
 
         //: rar daw = raw_daw[0|1]
