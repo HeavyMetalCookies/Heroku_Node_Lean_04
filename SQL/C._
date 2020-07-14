@@ -1,0 +1,8 @@
+
+CREATE TABLE IF NOT EXISTS tab_001(
+    iid SERIAL PRIMARY KEY
+,   i_x int     NOT NULL
+,   i_y int     NOT NULL
+,   nam VARCHAR NOT NULL
+,   url VARCHAR NOT NULL
+);;
