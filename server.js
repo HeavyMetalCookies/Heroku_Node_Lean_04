@@ -233,7 +233,11 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
 
         });;
     };;
-    const HN4_SQL_Run_R=function( rar_daw ){ "use strict"
+    
+    //:RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR://
+    const HN4_SQL_Run_R=function( 
+        rar_daw 
+    ){ "use strict"
 
         //: rar daw = raw_daw[0|1]
         var rar     = rar_daw[ 0 ];
@@ -247,7 +251,6 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
             var len = q_r.rows.length;
             for( var i = 0; i < len; i++ ){
 
-              //:  rar[1].write( q_r.rows[i].toString() );
                 for( const [key,val] of Object.entries( q_r.rows[i] ) ){
 
                     rar[1].write(`${key}:${val}`);
@@ -270,6 +273,8 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
 
         });;
     };;
+    //:RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR://
+
     const HN4_SQL_Run_U=function( rar_daw ){ "use strict"
 
         //: rar daw = raw_daw[0|1]
