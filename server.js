@@ -68,7 +68,7 @@ const HN3_Run_cof
 
         await cli.connect();
         await cli.query("BEGIN" );
-        dar =await( cli.query( cof ) );
+        dar =await( cli.query( "" + cof + "" ) );
         await cli.query("COMMIT");
         
         pas=( 0+1 );
