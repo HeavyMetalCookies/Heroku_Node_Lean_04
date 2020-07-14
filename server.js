@@ -113,12 +113,12 @@ const HN3_Run_fas
                     
             
                 HN3_Run_cof( rar, cof )
-                .then(()=>{
+                .then(( q_r )=>{
             
                     //:Successful execution of query
             
                     ror_boo=(  1  );
-                    ror_dat=( cof );
+                    ror_dat=( [cof,q_r] );
             
                 }).catch((err)=>{
             
@@ -140,10 +140,10 @@ const HN3_Run_fas
         }).finally(()=>{
 
             if( 1 == ror_boo ){
-                njs_resolver( ror_dat );
+                njs_resolver( ror_dat ); //:[cof,q_r]
             }else
             if( 2 == ror_boo ){
-                njs_rejector( ror_dat );
+                njs_rejector( ror_dat ); //:(  err  )
             }else{
                 //:This section should never execute.
                 //:Indicates a programmer logic error.
@@ -167,7 +167,10 @@ const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
     var     daw = rar_daw[ 1 ];
 
     HN3_Run_fas( rar, daw[0] /* src_pat */ )
-    .then(( cof )=>{
+    .then(( cof_q_r )=>{
+
+        var cof = cof_q_r[ 0 ]; //:Contents_Of_File
+        var q_r = cof_q_r[ 1 ]; //:Query____Results
 
         rar[1].write("[HN3_S01]");
 
@@ -214,7 +217,7 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
         var     daw = rar_daw[ 1 ];
 
         HN3_Run_fas( rar, daw[0] /* src_pat */ )
-        .then(( cof )=>{
+        .then(( cof_q_r )=>{
 
             //:Do nothing, success
 
@@ -237,9 +240,14 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
         var     daw = rar_daw[ 1 ];
 
         HN3_Run_fas( rar, daw[0] /* src_pat */ )
-        .then(( cof )=>{
+        .then(( cof_q_r )=>{
 
-            //:Do nothing, success
+            var cof = cof_q_r[ 0 ];
+            var q_r = cof_q_r[ 1 ];
+            var len = q_r.length;
+            for( var i = 0; i < len; i++ ){
+                rar[1].write( q_r[i].toString() );
+            };;
 
         }).catch((obj_err)=>{
 
