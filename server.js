@@ -246,7 +246,15 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
             var q_r = cof_q_r[ 1 ];
             var len = q_r.rows.length;
             for( var i = 0; i < len; i++ ){
-                rar[1].write( q_r.rows[i].toString() );
+
+              //:  rar[1].write( q_r.rows[i].toString() );
+                for( const [key,val] of Object.entries( q_r.rows[i] ) ){
+
+                    rar[1].write(`${key}:${value}`);
+
+                };;
+
+
             };;
 
         }).catch((obj_err)=>{
