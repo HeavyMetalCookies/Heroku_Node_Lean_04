@@ -208,16 +208,50 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
 //:CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC://
 
     const HN4_SQL_Run_C=function( rar_daw ){ "use strict"
-        var rar=rar_daw[0];
-        var daw=rar_daw[1];
-        rar[1].end("[TODO:HN4_SQL_Run_C]");
 
+        //: rar daw = raw_daw[0|1]
+        var rar     = rar_daw[ 0 ];
+        var     daw = rar_daw[ 1 ];
+
+        HN3_Run_fas( rar, daw[0] /* src_pat */ )
+        .then(( cof )=>{
+
+            //:Do nothing, success
+
+        }).catch((obj_err)=>{
+
+            rar[1].write( 
+                "(" + "[HN4_E01]:" + obj_err.toString() + ")"
+            );;
+
+        }).finally(()=>{
+
+            rar[1].end();
+
+        });;
     };;
     const HN4_SQL_Run_R=function( rar_daw ){ "use strict"
-        var rar=rar_daw[0];
-        var daw=rar_daw[1];
-        rar[1].end("[TODO:HN4_SQL_Run_R]");
 
+        //: rar daw = raw_daw[0|1]
+        var rar     = rar_daw[ 0 ];
+        var     daw = rar_daw[ 1 ];
+
+        HN3_Run_fas( rar, daw[0] /* src_pat */ )
+        .then(( cof )=>{
+
+            //:Do nothing, success
+
+        }).catch((obj_err)=>{
+
+            rar[1].write( 
+                "(" + "[HN4_E02]:" + obj_err.toString() + ")"
+            );;
+
+        }).finally(()=>{
+
+            rar[1].end();
+
+        });;
     };;
     const HN4_SQL_Run_U=function( rar_daw ){ "use strict"
         var rar=rar_daw[0];
