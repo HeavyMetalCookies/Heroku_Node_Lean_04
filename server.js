@@ -348,17 +348,17 @@ const HN2_Rou=function( req , res ){ "use strict"
     /* -- */    ,   "/J" : [ "./j_s._"    , "text/javascript" ]
     /* -- */    ,   "/T" : [ "./sql._"    , "SQL_GET_TEST"    ]
 
-                ,   "/C"      :[ "./sql/C._"  , "SQL_RUN_C"   ]
-                ,   "/CRUD_C" :[ "./sql/C._"  , "SQL_RUN_C"   ]
+                ,   "/C"      :[ "./SQL/C._"  , "SQL_RUN_C"   ]
+                ,   "/CRUD_C" :[ "./SQL/C._"  , "SQL_RUN_C"   ]
                                                               
-                ,   "/R"      :[ "./sql/R._"  , "SQL_RUN_R"   ]
-                ,   "/CRUD_R" :[ "./sql/R._"  , "SQL_RUN_R"   ]
+                ,   "/R"      :[ "./SQL/R._"  , "SQL_RUN_R"   ]
+                ,   "/CRUD_R" :[ "./SQL/R._"  , "SQL_RUN_R"   ]
                                                               
-                ,   "/U"      :[ "./sql/U._"  , "SQL_RUN_U"   ]
-                ,   "/CRUD_U" :[ "./sql/U._"  , "SQL_RUN_U"   ]
+                ,   "/U"      :[ "./SQL/U._"  , "SQL_RUN_U"   ]
+                ,   "/CRUD_U" :[ "./SQL/U._"  , "SQL_RUN_U"   ]
                                                               
-                ,   "/D"      :[ "./sql/D._"  , "SQL_RUN_D"   ]
-                ,   "/CRUD_D" :[ "./sql/D._"  , "SQL_RUN_D"   ]
+                ,   "/D"      :[ "./SQL/D._"  , "SQL_RUN_D"   ]
+                ,   "/CRUD_D" :[ "./SQL/D._"  , "SQL_RUN_D"   ]
                 
     /* -- */    };;
     /* 02 */    daw=( tab_daw[ url ] || tab_daw[ "/K" ] );
