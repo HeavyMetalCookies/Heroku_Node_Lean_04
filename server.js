@@ -250,7 +250,7 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
               //:  rar[1].write( q_r.rows[i].toString() );
                 for( const [key,val] of Object.entries( q_r.rows[i] ) ){
 
-                    rar[1].write(`${key}:${value}`);
+                    rar[1].write(`${key}:${val}`);
 
                 };;
 
