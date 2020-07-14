@@ -1,9 +1,7 @@
-
-DELETE FROM tab_001
-WHERE iid = ANY   IN (
-    SELECT       iid
-    FROM     tab_001
-    ORDER BY     iid
-    LIMIT          1
+DELETE FROM   tab_001
+WHERE iid IN(
+    SELECT        iid
+    FROM      tab_001
+    ORDER BY      iid
+    LIMIT           1
 );;
-
