@@ -262,10 +262,32 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
         });;
     };;
     const HN4_SQL_Run_U=function( rar_daw ){ "use strict"
-        var rar=rar_daw[0];
-        var daw=rar_daw[1];
-        rar[1].end("[TODO:HN4_SQL_Run_U]");
 
+        //: rar daw = raw_daw[0|1]
+        var rar     = rar_daw[ 0 ];
+        var     daw = rar_daw[ 1 ];
+
+        HN3_Run_fas( rar, daw[0] /* src_pat */ )
+        .then(( cof_q_r )=>{
+
+            var cof = cof_q_r[ 0 ];
+            var q_r = cof_q_r[ 1 ];
+            rar[1].write( ""
+            +   "[HN4_SQL_Run_U:q_r]:"
+            +    q_r.toString() 
+            );;
+
+        }).catch((obj_err)=>{
+
+            rar[1].write( 
+                "(" + "[HN4_E03]:" + obj_err.toString() + ")"
+            );;
+
+        }).finally(()=>{
+
+            rar[1].end();
+
+        });;
     };;
     const HN4_SQL_Run_D=function( rar_daw ){ "use strict"
         var rar=rar_daw[0];
