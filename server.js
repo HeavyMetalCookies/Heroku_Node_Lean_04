@@ -223,11 +223,13 @@ const HN4_Pri_rar_daw_cof_q_r=function(
     var q_r = cof_q_r[ 1 ];
     //://////////////////////////////////////////////////////://
 
-    if( q_r.rows  && (q_r.rows > 0 ) ){
+    if( q_r.rows  && (q_r.rows.length > 0 ) ){
 
         var len = q_r.rows.length;
         for( var i = 0; i < len; i++ ){
-        
+            
+           //: var obj_ent=( Object.entries( q_r.rows[ i ] ) );
+
             for( const [key,val] of Object.entries( q_r.rows[i] ) ){
         
                 rar[1].write(`${key}:${val}`);
@@ -238,7 +240,7 @@ const HN4_Pri_rar_daw_cof_q_r=function(
         
         };;
     }else
-    if( q_r.rows && (q_r.rows <= 0 ) ){
+    if( q_r.rows && (q_r.rows.length <= 0 ) ){
 
         rar[1].write("[ROWS_OBJECT_IS_EMPTY_ARRAY]\n");
 
