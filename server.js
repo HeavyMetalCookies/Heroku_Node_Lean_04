@@ -256,7 +256,9 @@ const HN4_Pri_rar_daw_cof_q_r=function(
         HN3_Run_fas( rar, daw[0] /* src_pat */ )
         .then(( cof_q_r )=>{
 
-            //:Do nothing, success
+            HN4_Pri_rar_daw_cof_q_r(
+                   [rar_daw,cof_q_r]
+            );;
 
         }).catch((obj_err)=>{
 
@@ -284,21 +286,6 @@ const HN4_Pri_rar_daw_cof_q_r=function(
             HN4_Pri_rar_daw_cof_q_r(
                    [rar_daw,cof_q_r]
             );;
-
-        //:    var cof = cof_q_r[ 0 ];
-        //:    var q_r = cof_q_r[ 1 ];
-        //:    var len = q_r.rows.length;
-        //:    for( var i = 0; i < len; i++ ){
-        //:
-        //:        for( const [key,val] of Object.entries( q_r.rows[i] ) ){
-        //:
-        //:            rar[1].write(`${key}:${val}`);
-        //:            rar[1].write("\n");
-        //:
-        //:        };;
-        //:        rar[1].write("\n\n");
-        //:
-        //:    };;
 
         }).catch((obj_err)=>{
 
