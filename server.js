@@ -113,12 +113,12 @@ const HN3_Run_fas
                     
             
                 HN3_Run_cof( rar, cof )
-                .then(( q_r )=>{
+                .then(( ros )=>{
             
                     //:Successful execution of query
             
                     ror_boo=(  1  );
-                    ror_dat=( [cof,q_r] );
+                    ror_dat=( [cof,ros] );
             
                 }).catch((err)=>{
             
@@ -140,7 +140,7 @@ const HN3_Run_fas
         }).finally(()=>{
 
             if( 1 == ror_boo ){
-                njs_resolver( ror_dat ); //:[cof,q_r]
+                njs_resolver( ror_dat ); //:[cof,ros]
             }else
             if( 2 == ror_boo ){
                 njs_rejector( ror_dat ); //:(obj_err)
@@ -167,10 +167,10 @@ const HN2_SQL_Get_Tes =function( rar_daw ){ "use strict"
     var     daw = rar_daw[ 1 ];
 
     HN3_Run_fas( rar, daw[0] /* src_pat */ )
-    .then(( cof_q_r )=>{
+    .then(( cof_ros )=>{
 
-        var cof = cof_q_r[ 0 ]; //:Contents_Of_File
-        var q_r = cof_q_r[ 1 ]; //:Query____Results
+        var cof = cof_ros[ 0 ]; //:Contents_Of_File
+        var ros = cof_ros[ 1 ]; //:Query____Results
 
         rar[1].write("[HN3_S01]");
 
@@ -207,28 +207,28 @@ const HN1_Ser_Fil =function( rar_daw ){ "use strict"
     });;
 };;
 
-const HN4_Pri_rar_daw_cof_q_r=function(
-              rar_daw_cof_q_r
+const HN4_Pri_rar_daw_cof_ros=function(
+              rar_daw_cof_ros
 ){ "use strict"
 
     //:Unpack Data:
     //://////////////////////////////////////////////////////://
-    var rar_daw = rar_daw_cof_q_r[ 0 ];
-    var cof_q_r = rar_daw_cof_q_r[ 1 ];
+    var rar_daw = rar_daw_cof_ros[ 0 ];
+    var cof_ros = rar_daw_cof_ros[ 1 ];
 
     var rar = rar_daw[ 0 ];
     var daw = rar_daw[ 1 ];
 
-    var cof = cof_q_r[ 0 ];
-    var q_r = cof_q_r[ 1 ];
+    var cof = cof_ros[ 0 ];
+    var ros = cof_ros[ 1 ];
     //://////////////////////////////////////////////////////://
 
-    if( q_r.rows  && (q_r.rows.length > 0 ) ){
+    if( ros.rows  && (ros.rows.length > 0 ) ){
 
-        var len = q_r.rows.length;
+        var len = ros.rows.length;
         for( var i = 0; i < len; i++ ){
             
-            var obj_ent=( Object.entries( q_r.rows[ i ] ) );
+            var obj_ent=( Object.entries( ros.rows[ i ] ) );
 
             for( const [key,val] of obj_ent ){
         
@@ -240,12 +240,12 @@ const HN4_Pri_rar_daw_cof_q_r=function(
         
         };;
     }else
-    if( q_r.rows && (q_r.rows.length <= 0 ) ){
+    if( ros.rows && (ros.rows.length <= 0 ) ){
 
         rar[1].write("[ROWS_OBJECT_IS_EMPTY_ARRAY]\n");
 
     }else
-    if(!q_r.rows ){
+    if(!ros.rows ){
         
         rar[1].write("[ROWS_OBJECT_DOES_NOT_EXIST]\n");
 
@@ -273,10 +273,10 @@ const HN4_Pri_rar_daw_cof_q_r=function(
         var     daw = rar_daw[ 1 ];
 
         HN3_Run_fas( rar, daw[0] /* src_pat */ )
-        .then(( cof_q_r )=>{
+        .then(( cof_ros )=>{
 
-            HN4_Pri_rar_daw_cof_q_r(
-                   [rar_daw,cof_q_r]
+            HN4_Pri_rar_daw_cof_ros(
+                   [rar_daw,cof_ros]
             );;
 
         }).catch((obj_err)=>{
@@ -301,10 +301,10 @@ const HN4_Pri_rar_daw_cof_q_r=function(
         var     daw = rar_daw[ 1 ];
 
         HN3_Run_fas( rar, daw[0] /* src_pat */ )
-        .then(( cof_q_r )=>{
+        .then(( cof_ros )=>{
 
-            HN4_Pri_rar_daw_cof_q_r(
-                   [rar_daw,cof_q_r]
+            HN4_Pri_rar_daw_cof_ros(
+                   [rar_daw,cof_ros]
             );;
 
         }).catch((obj_err)=>{
@@ -327,10 +327,10 @@ const HN4_Pri_rar_daw_cof_q_r=function(
         var     daw = rar_daw[ 1 ];
 
         HN3_Run_fas( rar, daw[0] /* src_pat */ )
-        .then(( cof_q_r )=>{
+        .then(( cof_ros )=>{
 
-            HN4_Pri_rar_daw_cof_q_r(
-                   [rar_daw,cof_q_r]
+            HN4_Pri_rar_daw_cof_ros(
+                   [rar_daw,cof_ros]
             );;
 
         }).catch((obj_err)=>{
@@ -352,10 +352,10 @@ const HN4_Pri_rar_daw_cof_q_r=function(
         var     daw = rar_daw[ 1 ];
 
         HN3_Run_fas( rar, daw[0] /* src_pat */ )
-        .then(( cof_q_r )=>{
+        .then(( cof_ros )=>{
 
-            HN4_Pri_rar_daw_cof_q_r(
-                   [rar_daw,cof_q_r]
+            HN4_Pri_rar_daw_cof_ros(
+                   [rar_daw,cof_ros]
             );;
 
         }).catch((obj_err)=>{
