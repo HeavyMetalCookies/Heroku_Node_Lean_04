@@ -223,7 +223,7 @@ const HN4_Pri_rar_daw_cof_q_r=function(
     var q_r = cof_q_r[ 1 ];
     //://////////////////////////////////////////////////////://
 
-    if( q_r.rows ){
+    if( q_r.rows  && (q_r.rows > 0 ) ){
 
         var len = q_r.rows.length;
         for( var i = 0; i < len; i++ ){
@@ -237,10 +237,19 @@ const HN4_Pri_rar_daw_cof_q_r=function(
             rar[1].write("\n\n");
         
         };;
+    }else
+    if( q_r.rows && (q_r.rows <= 0 ) ){
+
+        rar[1].write("[ROWS_OBJECT_IS_EMPTY_ARRAY]\n");
+
+    }else
+    if(!q_r.rows ){
+        
+        rar[1].write("[ROWS_OBJECT_DOES_NOT_EXIST]\n");
 
     }else{
         
-        rar[1].write("[NO_ROWS_RETURNED]\n");
+        rar[1].write("[EDCL:2020_07_14]");
 
     };;
 
