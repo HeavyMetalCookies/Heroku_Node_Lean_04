@@ -228,9 +228,9 @@ const HN4_Pri_rar_daw_cof_q_r=function(
         var len = q_r.rows.length;
         for( var i = 0; i < len; i++ ){
             
-           //: var obj_ent=( Object.entries( q_r.rows[ i ] ) );
+            var obj_ent=( Object.entries( q_r.rows[ i ] ) );
 
-            for( const [key,val] of Object.entries( q_r.rows[i] ) ){
+            for( const [key,val] of obj_ent ){
         
                 rar[1].write(`${key}:${val}`);
                 rar[1].write("\n");
