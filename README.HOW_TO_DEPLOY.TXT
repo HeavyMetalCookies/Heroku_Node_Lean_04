@@ -17,4 +17,4 @@ Deploy:
     6. git push heroku master
     7. Browser[ https://prj-name.herokuapp.com/ ]
 
-    -John Mark
+    -John Mark Isaac Madison

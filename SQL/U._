@@ -1,2 +1,2 @@
 INSERT INTO tab_001(iid,i_x,i_y,nam,url)
-VALUES( DEFAULT, 1,2,'[NAM]','[URL]' );
+VALUES( DEFAULT, 1,2,'[NAM]','[URL]' ); 
