@@ -1,3 +1,5 @@
+//://////////////////////////////////////////////////////////://
+
 //:HN4: Heroku_Node(lean):04
 //:     HN1: Minimal example to serve Html + Javascript.
 //:     HN2: Serve File as text, promises, routing refactor.
@@ -6,12 +8,21 @@
 
 //:FUNCTION_INDEX:
 
-    //: HN2_Get_fas      : Get_file_as_string
-    //: HN3_Run_cof      : Run_contents_of_file
-    //: HN3_Run_fas      : Run_file_as_string
-    //: HN2_SQL_Get_Tes  : SQL_Get_Test
-    //: HN1_Ser_Fil      : Serve_File
-    //: HN1_Mai          : MAIn_entry_point
+    //: HN1_Mai                 : MAIn_entry_point
+    //: HN1_Ser_Fil             : Serve_File
+
+    //: HN2_Get_fas             : Get_file_as_string
+    //: HN2_Rou                 : Main url router function.
+    //: HN2_SQL_Get_Tes         : SQL_Get_Test
+
+    //: HN3_Run_cof             : Run_contents_of_file
+    //: HN3_Run_fas             : Run_file_as_string
+
+    //: HN4_Pri_rar_daw_cof_ros : Prints[ rar_daw_cof_ros ]
+    //: HN4_SQL_Run_C           : Run CREATE sql code.
+    //: HN4_SQL_Run_D           : Run DELETE sql code.
+    //: HN4_SQL_Run_R           : Run READ   sql code.
+    //: HN4_SQL_Run_U           : Run UPDATE sql code.
 
 //:IMPORTS:
 
@@ -26,6 +37,7 @@
     var     cli = null; //:pg.Client instance.
     var obj_cin = null; //:pg connection information object
 
+//://////////////////////////////////////////////////////////://
 
 const HN2_Get_fas =function( src_pat ){
 
@@ -469,7 +481,41 @@ const HN1_Mai=function(){ "use strict"
 HN1_Mai();
 
 /**-*********************************************************-**
+                                                    
+        FILE_SCOPE_VARIABLES :: File scope in the C99 sense.
+     HN4_Pri_rar_daw_cof_ros :: Prints rar_daw_cof_ros
+"ROWS_OBJECT_IS_EMPTY_ARRAY" :: Helpful info for example code.
+"ROWS_OBJECT_DOES_NOT_EXIST" :: Helpful info for example code.
 
+           HN4_ERR: HerokuNode04_ERRor
+   rar_daw_cof_ros: [rar_daw,cof_ros] packed into tuple.
+             "SQL": Structured_Query_Language (Folder)
+              "/C": SHORT path: Create  ( DEMONSTRATION )
+         "/CRUD_C": LONG  path: Create  ( DEMONSTRATION )
+              "/R": SHORT path: Read    ( DEMONSTRATION )
+         "/CRUD_R": LONG  path: Read    ( DEMONSTRATION )
+              "/U": SHORT path: Update  ( DEMONSTRATION )
+         "/CRUD_U": LONG  path: Update  ( DEMONSTRATION )
+              "/D": SHORT path: Delete  ( DEMONSTRATION )
+         "/CRUD_D": LONG  path: Delete  ( DEMONSTRATION )
+       "SQL_RUN_C": Tells us a CREATE function should be ran.
+       "SQL_RUN_R": Tells us a READ   function should be ran.
+       "SQL_RUN_U": Tells us a UPDATE function should be ran.
+       "SQL_RUN_D": Tells us a DELETE function should be ran.
+     HN4_SQL_Run_C: Action to run CREATE sql command.
+     HN4_SQL_Run_R: Action to run READ   sql command.
+     HN4_SQL_Run_U: Action to run UPDATE sql command.
+     HN4_SQL_Run_D: Action to run DELETE sql command.
+
+  connectionString: Provider uses this to connect to database.
+               D_U: Database_Url
+              true: Boolean value for [  set/on ] bit.
+             false: Boolean value for [unset/off] bit.
+           HN2_Rou: HerokuNode2_Router (Main routing function)
+               ssl: Secure_Sockets_Layer (But probably:TLS)
+               tls: Transport_Layer_Security (Updated ssl)
+           obj_cin: OBJect_ConnectionINformation
+rejectUnauthorized: Worry about verifying server identity?
                  ": Double quote character. Same as single:'
                  ': Single quote character. Same as double:"
                  +: [ addition | string concat | english:And ]
@@ -600,7 +646,45 @@ HN1_Mai();
    HN2_SQL_Get_Tes: Get SQL file as string test.
    HN2_SQL_Get_Tes: SQL_Get_Test
   "DOCUMENT_TITLE": Placeholder string.
-"tex t/javascript": "Content-Type" for javascript files
+ "text/javascript": "Content-Type" for javascript files
 const A=(B)=>{...}: function "A" taking param "B"
+             write: Writes in body of response to client.
+           HN4_E01: HerokuNode4_Error #1
+           HN4_E02: HerokuNode4_Error #2
+           HN4_E03: HerokuNode4_Error #3
+           HN4_E04: HerokuNode4_Error #4
+              CRUD: Create_Read_Update_Delete
+               HN2: HerokuNode(lean)02 ( Namespace )
+               HN3: HerokuNode(lean)03 ( Namespace )
+               HN4: HerokuNode(lean)04 ( Namespace )
+    FUNCTION_INDEX: A list of function names at top of file
+           IMPORTS: A list of imports at top of file.
+                pg: Postgres library for Node.js
+               err: An error string. MAYBE error object.
+               pas: Did whatever pass boolean as integer.
+               dar: Database Response. USE[ ros ] instead.
+              null: A pointer to nothing. 
+           src_pat: SouRCe_PATh (Path to source text)
+          function: Denotes a function/procedure/method.
+             throw: Throw an error
+               try: Attempt a block of guarded code.
+             await: Pause execution here until async returns.
+           connect: Connect to database.
+             query: Run an SQL query on database.
+           "BEGIN": Groups SQL statements into a transaction.
+          "COMMIT": Commit changes made by SQL transation.
+           finally: Always do this part of try/catch block.
+          toString: Convert object to string representation.
+               ros: Result_Of_SQL (AKA: dar but use ros)
+           ror_boo: ResolveOrReject_BOOlean
+           ror_dat: ResolveOrReject_DATa
+      hn3_executor: Private executor func with HN3 namespace.
+              rows: Rows returned from sql query
+            length: Number of elements in an array
+ "EDCL:2020_07_14": EDCL error as unique string
+              EDCL: Expected_Dead_Code_Line
+           raw_daw: [ raw , daw ] packed into tuple.
+      DATABASE_URL: Database URL built into heroku machines.
+    "Content-Type": Key denoting the MIME type of payload.
 
 **-*********************************************************-**/
