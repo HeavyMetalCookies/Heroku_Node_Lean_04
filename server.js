@@ -223,17 +223,25 @@ const HN4_Pri_rar_daw_cof_q_r=function(
     var q_r = cof_q_r[ 1 ];
     //://////////////////////////////////////////////////////://
 
-    var len = q_r.rows.length;
-    for( var i = 0; i < len; i++ ){
-    
-        for( const [key,val] of Object.entries( q_r.rows[i] ) ){
-    
-            rar[1].write(`${key}:${val}`);
-            rar[1].write("\n");
-    
+    if( q_r.rows ){
+
+        var len = q_r.rows.length;
+        for( var i = 0; i < len; i++ ){
+        
+            for( const [key,val] of Object.entries( q_r.rows[i] ) ){
+        
+                rar[1].write(`${key}:${val}`);
+                rar[1].write("\n");
+        
+            };;
+            rar[1].write("\n\n");
+        
         };;
-        rar[1].write("\n\n");
-    
+
+    }else{
+        
+        rar[1].write("[NO_ROWS_RETURNED]\n");
+
     };;
 
     rar[1].write( ""
