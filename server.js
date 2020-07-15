@@ -308,11 +308,15 @@ const HN4_Pri_rar_daw_cof_q_r=function(
         HN3_Run_fas( rar, daw[0] /* src_pat */ )
         .then(( cof_q_r )=>{
 
-            var cof = cof_q_r[ 0 ];
-            var q_r = cof_q_r[ 1 ];
-            rar[1].write( ""
-            +   "[HN4_SQL_Run_U:q_r]:"
-            +    q_r.toString() 
+            //: var cof = cof_q_r[ 0 ];
+            //: var q_r = cof_q_r[ 1 ];
+            //: rar[1].write( ""
+            //: +   "[HN4_SQL_Run_U:q_r]:"
+            //: +    q_r.toString() 
+            //: );;
+
+            HN4_Pri_rar_daw_cof_q_r(
+                   [rar_daw,cof_q_r]
             );;
 
         }).catch((obj_err)=>{
