@@ -72,7 +72,7 @@ const HN3_Run_cof
 
     var cli=null;
     var err="[HN3_E01:NOT_SET]";
-    var dar=null; //:DatabasE_Response
+    var ros=null; 
     var pas=( 0 );
     try{
 
@@ -80,7 +80,7 @@ const HN3_Run_cof
 
         await cli.connect();
         await cli.query("BEGIN" );
-        dar =await( cli.query( "" + cof + "" ) );
+        ros =await( cli.query( "" + cof + "" ) );
         await cli.query("COMMIT");
         
         pas=( 0+1 );
@@ -100,7 +100,7 @@ const HN3_Run_cof
 
     };;
 
-    if( pas > 0 ){         return( dar ); }   //:Resolve
+    if( pas > 0 ){         return( ros ); }   //:Resolve
     return(        Promise.reject( err )  );; //:Reject
 };;
 
@@ -165,8 +165,6 @@ const HN3_Run_fas
         });;
      
     };; //:[hn3_executor]////////////////////////////////////://
-
-
 
     var pro=( new Promise( hn3_executor ) );
     return( pro );
@@ -482,40 +480,6 @@ HN1_Mai();
 
 /**-*********************************************************-**
                                                     
-        FILE_SCOPE_VARIABLES :: File scope in the C99 sense.
-     HN4_Pri_rar_daw_cof_ros :: Prints rar_daw_cof_ros
-"ROWS_OBJECT_IS_EMPTY_ARRAY" :: Helpful info for example code.
-"ROWS_OBJECT_DOES_NOT_EXIST" :: Helpful info for example code.
-
-           HN4_ERR: HerokuNode04_ERRor
-   rar_daw_cof_ros: [rar_daw,cof_ros] packed into tuple.
-             "SQL": Structured_Query_Language (Folder)
-              "/C": SHORT path: Create  ( DEMONSTRATION )
-         "/CRUD_C": LONG  path: Create  ( DEMONSTRATION )
-              "/R": SHORT path: Read    ( DEMONSTRATION )
-         "/CRUD_R": LONG  path: Read    ( DEMONSTRATION )
-              "/U": SHORT path: Update  ( DEMONSTRATION )
-         "/CRUD_U": LONG  path: Update  ( DEMONSTRATION )
-              "/D": SHORT path: Delete  ( DEMONSTRATION )
-         "/CRUD_D": LONG  path: Delete  ( DEMONSTRATION )
-       "SQL_RUN_C": Tells us a CREATE function should be ran.
-       "SQL_RUN_R": Tells us a READ   function should be ran.
-       "SQL_RUN_U": Tells us a UPDATE function should be ran.
-       "SQL_RUN_D": Tells us a DELETE function should be ran.
-     HN4_SQL_Run_C: Action to run CREATE sql command.
-     HN4_SQL_Run_R: Action to run READ   sql command.
-     HN4_SQL_Run_U: Action to run UPDATE sql command.
-     HN4_SQL_Run_D: Action to run DELETE sql command.
-
-  connectionString: Provider uses this to connect to database.
-               D_U: Database_Url
-              true: Boolean value for [  set/on ] bit.
-             false: Boolean value for [unset/off] bit.
-           HN2_Rou: HerokuNode2_Router (Main routing function)
-               ssl: Secure_Sockets_Layer (But probably:TLS)
-               tls: Transport_Layer_Security (Updated ssl)
-           obj_cin: OBJect_ConnectionINformation
-rejectUnauthorized: Worry about verifying server identity?
                  ": Double quote character. Same as single:'
                  ': Single quote character. Same as double:"
                  +: [ addition | string concat | english:And ]
@@ -536,35 +500,53 @@ rejectUnauthorized: Worry about verifying server identity?
                 []: Array literal or array access.
                 fs: file_system, built-in Node.js package.
                 if: Denotes condition required to execute block
+                pg: Postgres library for Node.js
                 to: Participle or denoting conversion.
                 {}: [ object / dictionary ] literal.
                //:: My personal colored comment sequence
                200: HTTP Status Code: Okay.
                ===: Strict Equality Comparison
+               D_U: Database_Url
                HN1: Heroku_Node_01 (Project Namespace)
+               HN2: HerokuNode(lean)02 ( Namespace )
+               HN3: HerokuNode(lean)03 ( Namespace )
+               HN4: HerokuNode(lean)04 ( Namespace )
                POR: Shorthand. SEE[ PORT ]
                UTF: Unicode Transformation Format (ASCI++)
                act: Action to perform
                cli: Client object. Probably PostGres PG client.
                cof: ContentsOf_ile (file_path ==> file_contents)
+               dar: Database Response. USE[ ros ] instead.
                daw: DataAndWhatever
                end: Server is done talking to client.
                env: contains virtual machine's environment vars
+               err: An error string. MAYBE error object.
                new: New keyword instantiates instances
                pac: Path And Contenttype
+               pas: Did whatever pass boolean as integer.
                pgc: PostGres_Client, just use [ cli ]
                pro: Promise instance
                rar: rar[0]==req, rar[1]==res
                req: REQuest  object
                res: RESponse object (TYPE:ServerResponse)
+               ros: Result_Of_SQL (AKA: dar but use ros)
                src: Denote path to javascript source file
+               ssl: Secure_Sockets_Layer (But probably:TLS)
+               tls: Transport_Layer_Security (Updated ssl)
+               try: Attempt a block of guarded code.
                url: Uniform_Resource_Locator
                var: function scope variable
+              "/C": SHORT path: Create  ( DEMONSTRATION )
+              "/D": SHORT path: Delete  ( DEMONSTRATION )
               "/H": Routes to our HTML file.
               "/J": Routes to our JavaScript file.
               "/K": Routes to our "key._" file.
+              "/R": SHORT path: Read    ( DEMONSTRATION )
+              "/U": SHORT path: Update  ( DEMONSTRATION )
               5190: Default Port Number if PORT undefined
+              CRUD: Create_Read_Update_Delete
               DATA: Information to act on or transform somehow
+              EDCL: Expected_Dead_Code_Line
               HTML: Hyper Text Markup Language
               Html: A stupid way to write "HTML"
               PORT: PORT number server application listens on
@@ -573,25 +555,37 @@ rejectUnauthorized: Worry about verifying server identity?
               func: NOT a keyword. Function pointer variable.
               http: http package that comes with Node.js
               http: hyper_text_transer_protocol
+              null: A pointer to nothing. 
+              rows: Rows returned from sql query
               then: Do this if promise accepted
+              true: Boolean value for [  set/on ] bit.
+             "SQL": Structured_Query_Language (Folder)
              ROUTE: Relative url identifying page or resource
              alert: Display an alert box
+             await: Pause execution here until async returns.
              catch: Do this if promise rejected or error.
              const: immutable block-scope variable
+             false: Boolean value for [unset/off] bit.
+             query: Run an SQL query on database.
              serve: To deliver data from server to client
              sql._: A test SQL file to help figure things out.
+             throw: Throw an error
              title: Node representing <title> element.
+             write: Writes in body of response to client.
             <head>: Metadata container element.
             ACTION: A function to be performed with DATA
+            length: Number of elements in an array
             listen: Creates listener on specified port.
             return: Return keyword returns value from function.
             script: Declare script reference in HTML file.
             window: Represents an open window in a browser.
+           "BEGIN": Groups SQL statements into a transaction.
            "utf-8": Unicode byte encoding. Extends: US-ASCII
            <title>: Denote title of html page
            DOCTYPE: Tell browser what markup language is used.
            HN1_Mai: MAIn_entry_point
            HN1_Mai: Main entry point.
+           HN2_Rou: HerokuNode2_Router (Main routing function)
            HN3_E01: HerokuNode(lean)03: Error #1
            HN3_E02: HerokuNode(lean)03: Error #2
            HN3_E03: HerokuNode(lean)03: Error #3
@@ -599,30 +593,55 @@ rejectUnauthorized: Worry about verifying server identity?
            HN3_E05: HerokuNode(lean)03: Error #5
            HN3_E06: HerokuNode(lean)03: Error #6
            HN3_S01: HerokuNode(lean)03: Success #1
+           HN4_E01: HerokuNode4_Error #1
+           HN4_E02: HerokuNode4_Error #2
+           HN4_E03: HerokuNode4_Error #3
+           HN4_E04: HerokuNode4_Error #4
+           HN4_ERR: HerokuNode04_ERRor
+           IMPORTS: A list of imports at top of file.
            Minimal: No extranious moving parts.
            Promise: Promise class built into NodeJS
            charset: Denote character encoding of file. 
+           connect: Connect to database.
            dat_fil: DEPRECATED_USE[ cof ](cof:ContentsOfFile)
            example: Show you how it is done
+           finally: Always do this part of try/catch block.
            jum_dic: JUMp_DICtionary (Like a jumptable)
            not_nil: Denote object is not [nil/null]
+           obj_cin: OBJect_ConnectionINformation
            obj_err: Object of duck-type error.
            process: built-in Node.js global [variable/object]
            rar_daw: [ raw , daw ] packed together.
+           raw_daw: [ raw , daw ] packed into tuple.
            require: Like: Java import, C# using , C include
+           ror_boo: ResolveOrReject_BOOlean
+           ror_dat: ResolveOrReject_DATa
+           src_pat: SouRCe_PATh (Path to source text)
            tab_act: TABle_of_ACTions
            tab_daw: TABle_of_DataAndWhatever
+          "COMMIT": Commit changes made by SQL transation.
           WHATEVER: Interpret it as data,function or whatever.
           document: Root node of the HTML document.
+          function: Denotes a function/procedure/method.
           function: Used for functions assigned to const
           readFile: Async file load
+          toString: Convert object to string representation.
          "./htm._": Html file with "_" extension
          "./j_s._": Javascript file with "_" extension
          "./key._": File documenting 100% of source tokens.
+         "/CRUD_C": LONG  path: Create  ( DEMONSTRATION )
+         "/CRUD_D": LONG  path: Delete  ( DEMONSTRATION )
+         "/CRUD_R": LONG  path: Read    ( DEMONSTRATION )
+         "/CRUD_U": LONG  path: Update  ( DEMONSTRATION )
          setHeader: Sets single header value for headers object.
          writeHead: Sends a response header to the request
+        FILE_SCOPE_VARIABLES :: File scope in the C99 sense.
         JavaScript: The language used by Node.js servers
         Javascript: Poorly capitalized "JavaScript"
+       "SQL_RUN_C": Tells us a CREATE function should be ran.
+       "SQL_RUN_D": Tells us a DELETE function should be ran.
+       "SQL_RUN_R": Tells us a READ   function should be ran.
+       "SQL_RUN_U": Tells us a UPDATE function should be ran.
        "text/html": "Content-Type" for html files
        HN1_Ser_Fil: HN1_Serve_File: Serves a file to client.
        HN1_Ser_Fil: Serve_File
@@ -633,58 +652,35 @@ rejectUnauthorized: Worry about verifying server identity?
        Heroku_Node: Denotes a project using Heroku & Node.js
       "text/plain": "Content-Type" for plain text, NOT code.
       "use strict": Warnings are errors.
+      DATABASE_URL: Database URL built into heroku machines.
       createServer: SEE[ https://nodejs.org/api/http.html ]
       hn2_executor: Executor function from HN2 project.
+      hn3_executor: Private executor func with HN3 namespace.
       njs_rejector: Rejector function built into NodeJS
       njs_resolver: Resolver function built into NodeJS
      Default__Path: Default path if browser url is invalid
+     HN4_Pri_rar_daw_cof_ros :: Prints rar_daw_cof_ros
+     HN4_SQL_Run_C: Action to run CREATE sql command.
+     HN4_SQL_Run_D: Action to run DELETE sql command.
+     HN4_SQL_Run_R: Action to run READ   sql command.
+     HN4_SQL_Run_U: Action to run UPDATE sql command.
      Selected_Path: Path selected in browser url
+    "Content-Type": Key denoting the MIME type of payload.
     "SQL_GET_TEST": Action to perform is SQL GET TEST.
     "WINDOW_ALERT": Placeholder string.
+    FUNCTION_INDEX: A list of function names at top of file
    " Content-Type": Header indicating media type of resource.
    <!DOCTYPE HTML>: Tell browser document type is HTML.
    HN2_SQL_Get_Tes: Get SQL file as string test.
    HN2_SQL_Get_Tes: SQL_Get_Test
+   rar_daw_cof_ros: [rar_daw,cof_ros] packed into tuple.
   "DOCUMENT_TITLE": Placeholder string.
- "text/javascript": "Content-Type" for javascript files
-const A=(B)=>{...}: function "A" taking param "B"
-             write: Writes in body of response to client.
-           HN4_E01: HerokuNode4_Error #1
-           HN4_E02: HerokuNode4_Error #2
-           HN4_E03: HerokuNode4_Error #3
-           HN4_E04: HerokuNode4_Error #4
-              CRUD: Create_Read_Update_Delete
-               HN2: HerokuNode(lean)02 ( Namespace )
-               HN3: HerokuNode(lean)03 ( Namespace )
-               HN4: HerokuNode(lean)04 ( Namespace )
-    FUNCTION_INDEX: A list of function names at top of file
-           IMPORTS: A list of imports at top of file.
-                pg: Postgres library for Node.js
-               err: An error string. MAYBE error object.
-               pas: Did whatever pass boolean as integer.
-               dar: Database Response. USE[ ros ] instead.
-              null: A pointer to nothing. 
-           src_pat: SouRCe_PATh (Path to source text)
-          function: Denotes a function/procedure/method.
-             throw: Throw an error
-               try: Attempt a block of guarded code.
-             await: Pause execution here until async returns.
-           connect: Connect to database.
-             query: Run an SQL query on database.
-           "BEGIN": Groups SQL statements into a transaction.
-          "COMMIT": Commit changes made by SQL transation.
-           finally: Always do this part of try/catch block.
-          toString: Convert object to string representation.
-               ros: Result_Of_SQL (AKA: dar but use ros)
-           ror_boo: ResolveOrReject_BOOlean
-           ror_dat: ResolveOrReject_DATa
-      hn3_executor: Private executor func with HN3 namespace.
-              rows: Rows returned from sql query
-            length: Number of elements in an array
+  connectionString: Provider uses this to connect to database.
  "EDCL:2020_07_14": EDCL error as unique string
-              EDCL: Expected_Dead_Code_Line
-           raw_daw: [ raw , daw ] packed into tuple.
-      DATABASE_URL: Database URL built into heroku machines.
-    "Content-Type": Key denoting the MIME type of payload.
+ "text/javascript": "Content-Type" for javascript files
+"ROWS_OBJECT_DOES_NOT_EXIST" :: Helpful info for example code.
+"ROWS_OBJECT_IS_EMPTY_ARRAY" :: Helpful info for example code.
+const A=(B)=>{...}: function "A" taking param "B"
+rejectUnauthorized: Worry about verifying server identity?
 
 **-*********************************************************-**/
